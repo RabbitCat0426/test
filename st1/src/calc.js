@@ -1,6 +1,6 @@
 import React from 'react';
-import Combobox from 'react-widgets/lib/Combobox'
-
+import Combobox from 'react-widgets/lib/Combobox';
+import './App.css';
 
 
 class Calc extends React.Component{
@@ -9,95 +9,68 @@ class Calc extends React.Component{
         super(props);
         this.state = {
           valueA: 0,
-          valueB: 0
-        }
+          valueB: 0,
+          valueC: 0
+        };
       }
-    
+
       render() {
-        // const { valueA, valueB } = this.state;
-        // const sum = parseInt(valueA) + parseInt(valueB);
+
+
         return (
-            <LinearFunction/>
-        // <div>
-        //     <input LinearFunction/>
+          <div className="body" >
+            <input type="integer" value={this.props.valueA} />
+            <input type="button" value = "ooooooon"  onClick={() => this.LinearFunction1()} />
 
-        //   <input type="text" defaultValue={valueA} onInput={(e) => {
-        //     this.setState({
-        //       valueA: e.target.value
-        //     });
-        //   }} />
-        //   +
-        //       <input type="text" defaultValue={valueB} onInput={(e) => {
-        //     this.setState({
-        //       valueB: e.target.value
-        //     });
-        //   }} />
-        //   =
-        //       <input type="text" value={sum} readOnly />
-        // </div>
+          </div>
+          
         );
+
       }
-    }
 
+      LinearFunction1(){
 
-    // function sum(){
-    //     const { valueA, valueB } = this.state;
-    //     const sum = parseInt(valueA) + parseInt(valueB);
-    //     return (<div>
-    //         <input LinearFunction/>
-
-    //       <input type="text" defaultValue={valueA} onInput={(e) => {
-    //         this.setState({
-    //           valueA: e.target.valueLinearFunction
-    //         });
-    //       }} />
-    //       +
-    //           <input type="text" defaultValue={valueB} onInput={(e) => {
-    //         this.setState({
-    //           valueB: e.target.value
-    //         });
-    //       }} />
-    //       =
-    //           <input type="text" value={sum} readOnly />
-    //     </div>);
-    // }
-// function select(){
-//     switch(widgets){
-//         case '一次関数':
-//             <LinearFunction/>
-//         break;
+        console.log("props"&this.props);
         
-//         case '二次関数':
-//             <QuadraticFunction/>
-//         break;
-//     }
-// }
+
+        // this.setState({a : this.props.valueA});
+        // this.setState({y : this.props.valueB});
+
+
+      }
+      
+      buttonClick(){
+        return(
+          alert("sss")
+        );         
+      }
+
+    }
 
 class LinearFunction extends React.Component{
-
     render(){
-      const { valueA, valueB } = this.state;
-      const sum = parseInt(valueA) + parseInt(valueB);
-      return (<div>
-          <input LinearFunction/>
-
-        <input type="text" defaultValue={valueA} onInput={(e) => {
-          this.setState({
-            valueA: e.target.value
-          });
-        }} />
-        +
-            <input type="text" defaultValue={valueB} onInput={(e) => {
-          this.setState({
-            valueB: e.target.value
-          });
-        }} />
-        =
-            <input type="text" value={sum} readOnly />
-      </div>);
+      return(
+        <div></div>
+      );
     }
-
 }
+
+
+
+
+// function LinearFunction1(){
+//   const y = 0;
+//   const a = 0;
+//   const x = 0;
+//   const b = 0;
+//   const ax = 0;
+ 
+
+//   alert(this.props.valueA);
+//   // a = this.props.valueA;
+//   // y = this.props.valueB;
+
+// }
 
 class QuadraticFunction extends React.Component{
 
